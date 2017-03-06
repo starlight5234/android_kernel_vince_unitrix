@@ -20,8 +20,7 @@
 #include <linux/pagemap.h>
 #include <linux/err.h>
 #include <linux/leds.h>
-#include <linux/scatterlist.h>
-#include <linux/log2.h>
+#include <linux/scatterlist.h>#include <linux/log2.h>
 #include <linux/regulator/consumer.h>
 #include <linux/pm_runtime.h>
 #include <linux/pm_wakeup.h>
@@ -71,8 +70,8 @@ static const unsigned freqs[] = { 400000, 300000, 200000, 100000 };
  * performance cost, and for other reasons may not always be desired.
  * So we allow it it to be disabled.
  */
-bool use_spi_crc = 1;
-module_param(use_spi_crc, bool, 0);
+bool use_spi_crc = 0;
+module_param(use_spi_crc, bool, 0644);
 
 static int mmc_schedule_delayed_work(struct delayed_work *work,
 				     unsigned long delay)
