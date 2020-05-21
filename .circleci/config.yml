@@ -1,0 +1,17 @@
+version: 2.1
+jobs:
+  compile:
+   docker:
+      - image: ubuntu:19.04
+   steps:
+      - run:
+          command: |
+           apt-get -y update && apt-get -y upgrade && apt-get -y install bc build-essential zip gcc clang libc6 curl libstdc++6 git wget libssl-dev zstd
+           git clone --depth=1 https://github.com/starlight5234/android_kernel_vince_unitrix.git -b als-rebase
+           cd android_kernel_vince_unitrix
+           curl https://raw.githubusercontent.com/starlight5234/scripts/master/local.sh | bash
+workflows:
+  version: 2.1
+  cooking:
+    jobs:
+      - compile
