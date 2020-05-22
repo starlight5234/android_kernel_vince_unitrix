@@ -1,0 +1,13 @@
+
+kind: pipeline
+type: docker
+name: UnitrixPipeline
+
+steps:
+- name: Cosmic Horizon
+  image: panchajanya1999/archlinux:latest
+  environment:
+    BOT_API_KEY:
+      from_secret: BOT_API
+  commands:
+  - "curl https://raw.githubusercontent.com/starlight5234/scripts/master/kernel.sh | bash"
