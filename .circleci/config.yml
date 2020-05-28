@@ -1,0 +1,14 @@
+version: 2.1
+jobs:
+  compile:
+   docker:
+      - image: rama982/dokar:latest
+   steps:
+      - checkout
+      - run: curl https://raw.githubusercontent.com/starlight5234/scripts/master/local.sh | bash  
+      
+workflows:
+  version: 2.1
+  cooking:
+    jobs:
+      - compile
