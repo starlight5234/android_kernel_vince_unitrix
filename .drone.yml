@@ -13,4 +13,4 @@ steps:
     ID:
       from_secret: ID
   commands:
-  - "curl https://raw.githubusercontent.com/Unitrix-Kernel/build_scripts/master/docker.sh | bash"
+  - "curl https://raw.githubusercontent.com/Unitrix-Kernel/build_scripts/vince/build.sh | bash"
