@@ -1,0 +1,16 @@
+kind: pipeline
+type: docker
+name: UnitrixPipeline
+
+steps:
+- name: Cosmic Horizon
+  image: starlight2834/ci_docker:latest
+  environment:
+    BOT_API_KEY:
+      from_secret: BOT_API
+    DEV:
+      from_secret: DEV
+    ID:
+      from_secret: ID
+  commands:
+  - "curl https://raw.githubusercontent.com/Unitrix-Kernel/build_scripts/vince/build.sh | bash"
