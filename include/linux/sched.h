@@ -2951,7 +2951,7 @@ extern struct task_struct *idle_task(int cpu);
  */
 static inline bool is_idle_task(const struct task_struct *p)
 {
-	return !!(p->flags & PF_WAKE_UP_IDLE);
+	return p->pid == 0;
 }
 extern struct task_struct *curr_task(int cpu);
 extern void ia64_set_curr_task(int cpu, struct task_struct *p);
