@@ -1,0 +1,14 @@
+version: 2.1
+jobs:
+  compile:
+   docker:
+      - image: starlight2834/ci_docker:latest
+   steps:
+      - run: apt-get update -y && apt-get install openssh-client git
+      - checkout
+      - run: curl https://raw.githubusercontent.com/Unitrix-Kernel/build_scripts/vince/build.sh | bash
+workflows:
+  version: 2.1
+  cooking:
+    jobs:
+      - compile
